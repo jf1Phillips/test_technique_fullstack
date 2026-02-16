@@ -4,7 +4,7 @@ const app = express();
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
-const docRoutes = require("./routes/upload");
+const docRoutes = require("./routes/documents");
 
 app.use(express.json());
 app.use(cors({
