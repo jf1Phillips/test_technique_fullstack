@@ -34,6 +34,7 @@ DB_PORT=5432
 DB_USER=postgres
 DB_PASSWORD=your_password_here
 DB_NAME=pdfDb
+JWT_SECRET=your_jwt_secret
 ```
 
-Make sure to replace `your_password_here` with your actual PostgreSQL password if you set one.
+Make sure to replace `your_password_here` with your actual PostgreSQL password if you set one and `your_jwt_secret` with your secret key used to sign and verify JWT tokens for authentication.
