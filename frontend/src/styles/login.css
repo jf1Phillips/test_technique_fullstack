@@ -63,3 +63,21 @@
     border-radius: 8px;
     font-size: 14px;
 }
+
+.register-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.register-link {
+    color: #0072ff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+    color: #1e3c72;
+}
