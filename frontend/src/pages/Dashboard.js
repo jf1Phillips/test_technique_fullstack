@@ -24,6 +24,12 @@ function Dashboard() {
     }
   }, [navigate]);
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
+
   const fetchDocuments = async (token) => {
     try {
       const res = await API.get("http://localhost:5000/documents", {
@@ -116,6 +122,10 @@ function Dashboard() {
   return (<>
     <div className="header">
       <h1>Dashboard de {username && username}</h1>
+
+      <button className="logout-button" onClick={handleLogout}>
+        Déconnexion
+      </button>
     </div>
 
     <div className="docForm">
@@ -142,7 +152,7 @@ function Dashboard() {
       </div>
     </div>
 
-    <div className="separation"/>
+    <div className="separation" />
 
     <div className="dowloadedFiles">
       <h3 className="section-title">Vos documents téléchargés</h3>

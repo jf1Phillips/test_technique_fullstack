@@ -1,72 +1,84 @@
 .header {
-  width: 100%;
-  padding: 30px 0;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    padding: 30px 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .header h1 {
-  margin: 0;
-  color: white;
-  font-weight: 600;
-  font-size: 24px;
-  letter-spacing: 0.5px;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}
+
+.logout-button {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    border: none;
+    background: #00000000;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .docForm {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
 }
 
 .file-input {
-  display: none;
+    display: none;
 }
 
 .file-label {
-  display: inline-block;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: white;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-align: center;
-  min-width: 220px;
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 220px;
 }
 
 .file-label:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
 }
 
 .status {
-  margin-top: 20px;
-  min-height: 24px;
+    margin-top: 20px;
+    min-height: 24px;
 }
 
 .status p {
-  margin: 5px 0;
-  font-weight: 500;
+    margin: 5px 0;
+    font-weight: 500;
 }
 
 .status p:first-child {
-  color: #2ecc71;
+    color: #2ecc71;
 }
 
 .status p:last-child {
-  color: #e74c3c;
+    color: #e74c3c;
 }
 
 .dowloadedFiles {
     padding: 10px;
 }
+
 .section-title {
     color: #333;
     margin-left: 5%;
