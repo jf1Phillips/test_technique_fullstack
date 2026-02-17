@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const fs = require("fs");
 const router = express.Router();
 const checkToken = require("../config/checkToken");
 
@@ -26,6 +27,35 @@ router.post("/upload", checkToken, upload.single("file"), async (req, res) => {
             file: db_result.rows[0],
             username: username
         });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Internal server error" });
+    }
+});
+
+router.delete("/:id", checkToken, async (req, res) => {
+    const doc_id = req.params.id;
+    const user_id = req.user.id;
+
+    try {
+        const db_result = await pool.query(
+            "SELECT id, filepath FROM documents WHERE id = $1 AND user_id = $2",
+            [doc_id, user_id]
+        );
+
+        if (db_result.rows.length === 0)
+            return res.status(404).json({ error: "Document not found" });
+        const file_path = db_result.rows[0].filepath;
+
+        if (fs.existsSync(file_path)) {
+            fs.unlinkSync(file_path);
+        }
+
+        await pool.query(
+            "DELETE FROM documents WHERE id = $1 AND user_id = $2",
+            [doc_id, user_id]
+        );
+        return res.json({ message: "Document deleted successfully" });
     } catch (err) {
         console.error(err);
         return res.status(500).json({ error: "Internal server error" });
