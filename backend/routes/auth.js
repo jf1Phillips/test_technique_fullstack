@@ -35,10 +35,15 @@ router.post("/register", async (req, res) => {
     try {
         const hashed = await bcrypt.hash(password, 10);
         const db_return = await pool.query(
-            'INSERT INTO users (email, password, username) VALUES ($1, $2, $3) RETURNING id, email',
+            'INSERT INTO users (email, password, username) VALUES ($1, $2, $3) RETURNING id, email, username',
             [email, hashed, username]
         );
-        res.json({ user: db_return.rows[0] });
+
+        const user = db_return.rows[0];
+
+        const payload = { id: user.id, email: user.email, username: user.username };
+        const token = jwt.sign(payload, JWT_SECRET, {expiresIn: '1h'});
+        res.status(201).json({ token });
     } catch (err) {
         console.error(err);
         res.status(400).json({error: "User already exist"});

@@ -12,7 +12,7 @@ router.post("/upload", checkToken, upload.single("file"), async (req, res) => {
     if (!req.file)
         return res.status(400).json({ error: "No file uploaded" });
     try {
-        const real_filename = req.file.originalname;
+        const real_filename = Buffer.from(req.file.originalname, 'latin1').toString('utf8');
         const filepath = req.file.path;
 
         const user_id = req.user.id;
