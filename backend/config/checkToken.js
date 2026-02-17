@@ -15,7 +15,9 @@ function checkToken(req, res, next) {
         next();
     } catch (err) {
         console.error(err);
-        return res.status(400).json({ error: "Token is not valid" });
+        if (err.name === "TokenExpiredError")
+            return res.status(401).json({ error: "Token expired" });
+        return res.status(401).json({ error: "Invalid token" });
     }
 }
 

@@ -1,0 +1,141 @@
+.header {
+  width: 100%;
+  padding: 30px 0;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header h1 {
+  margin: 0;
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+
+.docForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 220px;
+}
+
+.file-label:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+}
+
+.status {
+  margin-top: 20px;
+  min-height: 24px;
+}
+
+.status p {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.status p:first-child {
+  color: #2ecc71;
+}
+
+.status p:last-child {
+  color: #e74c3c;
+}
+
+.dowloadedFiles {
+    padding: 10px;
+}
+.section-title {
+    color: #333;
+    margin-left: 5%;
+    font-size: 30px;
+    margin-top: 0;
+}
+
+.empty-state {
+    color: #777;
+    font-style: italic;
+}
+
+.documents-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.separation {
+    width: 90%;
+    height: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #8d8d8d;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.document-card {
+    background: white;
+    padding: 16px;
+    max-width: 800px;
+    width: 80%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.document-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.document-link {
+    color: #333;
+    font-weight: 500;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.delete-button {
+    margin-left: 15px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ff4d4f;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #d9363e;
+}
