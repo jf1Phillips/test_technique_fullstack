@@ -29,7 +29,6 @@ function Dashboard() {
     navigate("/");
   };
 
-
   const fetchDocuments = async (token) => {
     try {
       const res = await API.get("http://localhost:5000/documents", {
@@ -108,6 +107,32 @@ function Dashboard() {
     }
   };
 
+  const downloadDocument = async (doc) => {
+    const token = localStorage.getItem("token");
+    const id = doc.id;
+
+    try {
+      const response = await API.get(
+        `http://localhost:5000/documents/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          responseType: "blob",
+        }
+      );
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", doc.filename);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const confirmDelete = (id) => {
     const confirmed = window.confirm(
@@ -167,6 +192,13 @@ function Dashboard() {
               >
                 {doc.filename}
               </p>
+              <button
+                className="delete-button"
+                style={{backgroundColor: "#1e3c72"}}
+                onClick={() => downloadDocument(doc)}
+              >
+                Download
+              </button>
 
               <button
                 className="delete-button"
