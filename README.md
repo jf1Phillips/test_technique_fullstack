@@ -1,12 +1,12 @@
 # PDF Manager
 
-PDF Manager est une application web permettant de **gérer vos documents PDF** facilement. Vous pouvez **uploader, consulter et supprimer** vos fichiers PDF depuis un tableau de bord sécurisé. L’application utilise **React** pour le frontend, **Node.js/Express** pour le backend et **PostgreSQL** comme base de données.
+PDF Manager is a web application that allows you to easily **manage your PDF documents.** You can **upload, view, and delete** your PDF files from a secure dashboard. The application uses **React** for the frontend, **Node.js/Express** for the backend, and **PostgreSQL** as the database.
 
 ---
 
-## Prérequis
+## Prerequisites
 
-Avant de lancer l’application, assurez-vous d’avoir installé les outils suivants :
+Before launching the application, make sure you have installed the following tools:
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
@@ -14,7 +14,7 @@ Avant de lancer l’application, assurez-vous d’avoir installé les outils sui
 
 ---
 
-## Installation et lancement
+## Installation and launch
 
 ### 1. Create the database
 
